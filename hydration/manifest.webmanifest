@@ -1,0 +1,22 @@
+{
+  "short_name": "MiScale",
+  "name": "MiScale - Weight and Impedence",
+  "description": "Measures and Stores Weight and Impedence",
+  "icons": [
+    {
+      "src": "scale.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "scale.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/hydration",
+  "background_color": "#3367D6",
+  "display": "fullscreen",
+  "scope": "/hydration",
+  "theme_color": "#3367D6"
+}

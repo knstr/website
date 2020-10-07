@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="p5.js"></script>
+    <meta charset="utf-8">
+    <title>Miscale</title>
+	<link rel="manifest" href="manifest.webmanifest">
+</head>
+<body>
+
+<button onclick="startNotifications()">start</button>
+
+<script>
+
+function startNotifications() {
+let chosenHeartRateService = null;
+
+navigator.bluetooth.requestDevice({
+  filters: [{
+    services: ['body_composition']
+  }]
+}).then(device => device.gatt.connect())
+.then(server => server.getPrimaryService('body_composition'))
+.then(service => {
+  chosenHeartRateService = service;
+  return Promise.all([service.getCharacteristic('body_composition_measurement')
+      .then(handleBodyCompMeasurementCharacteristic),
+  ]);
+});
+};
+
+
+function handleBodyCompMeasurementCharacteristic(characteristic) {
+  return characteristic.startNotifications()
+  .then(char => {
+    characteristic.addEventListener('characteristicvaluechanged',
+                                    onNotify);
+  });
+}
+
+
+function numtobin(Byte){
+	var bin=(Byte).toString(2);
+	while(bin.length < 8) {bin = "0" + bin;}
+	return bin
+}
+
+function parseBodyComp(data) {
+	var result={};
+	var ctrlByte0 = numtobin(data.getUint8(0));
+	var ctrlByte1 = numtobin(data.getUint8(1));
+ 	var isWeightRemoved = (ctrlByte1[0]=="1"); //7
+	//var isDateInvalid = (ctrlByte1[4]=="1");
+	var isStabilized = (ctrlByte1[2]=="1");  //5
+	//var isLBSUnit = (ctrlByte0[0]=="1")
+	//var isCattyUnit = (ctrlByte1[6]=="1");
+	var isImpedance = (ctrlByte1[6]=="1"); //1
+	//console.log(ctrlByte1)
+	
+	var year = ((data.getUint8(3) & 0xFF) << 8) | 		(data.getUint8(2) & 0xFF);
+        var month = data.getUint8(4);
+        var day = data.getUint8(5);
+        var hours = data.getUint8(6);
+        var min = data.getUint8(7);
+        var sec = data.getUint8(8);
+	//console.log([year,month,day,hours,min,sec])
+	var weight = (((data.getUint8(12) & 0xFF) << 8) | (data.getUint8(11) & 0xFF)) / 200.0;
+	var impedance = (((data.getUint8(10) & 0xFF) << 8) | (data.getUint8(9) & 0xFF));
+	result.weight=weight;
+	//if (isStabilized & !isWeightRemoved){
+	//	result.weight=weight;
+	//	console.log(weight);};
+	if (isImpedance & !isWeightRemoved){
+		result.impedance=impedance;		
+		console.log(impedance);}
+
+//	result.dateStr=day+"-"+month+"-"+year" "hours+":"+min+":"+sec;
+
+	return result
+
+} 
+
+
+
+
+function tsja(){
+  const rate16Bits = flags & 0x1;
+  const result = {};
+  let index = 1;
+  if (rate16Bits) {
+    result.heartRate = data.getUint16(index, /*littleEndian=*/true);
+    index += 2;
+  } else {
+    result.heartRate = data.getUint8(index);
+    index += 1;
+  }
+  const contactDetected = flags & 0x2;
+  const contactSensorPresent = flags & 0x4;
+  if (contactSensorPresent) {
+    result.contactDetected = !!contactDetected;
+  }
+  const energyPresent = flags & 0x8;
+  if (energyPresent) {
+    result.energyExpended = data.getUint16(index, /*littleEndian=*/true);
+    index += 2;
+  }
+  const rrIntervalPresent = flags & 0x10;
+  if (rrIntervalPresent) {
+    const rrIntervals = [];
+    for (; index + 1 < data.byteLength; index += 2) {
+      rrIntervals.push(data.getUint16(index, /*littleEndian=*/true));
+    }
+    result.rrIntervals = rrIntervals;
+  }
+  return result;
+}
+
+
+
+
+
+
+
+
+
+var newValue=false;
+var hrArray=[];
+var rrArray=[];
+var hrMax=195;
+var hrMin=40;
+var rrMin=700;
+var rrMax=1500;
+var dat;
+
+function onNotify(event) {
+  const characteristic = event.target;
+ 
+ dat=parseBodyComp(characteristic.value);
+ redraw();
+ newValue=true;
+}
+
+
+function setup() {
+  textSize(20);
+  createCanvas(50,50);
+	noLoop();
+}
+
+
+function draw() {
+  background(255);
+  text(dat.weight,5,10);
+  text(dat.impedance,5,20);
+}
+
+
+</script>
+
+</body>
+</html>
+
