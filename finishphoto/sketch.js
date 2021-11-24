@@ -2,7 +2,7 @@ let capture;
 var w=1;
 var x=1;
 function setup() {
-  createCanvas(windowWidth, windowHeight);
+  createCanvas(1600, windowHeight);
   let constraints = {
     video: true,
     audio: false
@@ -19,5 +19,5 @@ function draw() {
 }
 
 function windowResized() {
-  resizeCanvas(windowWidth, windowHeight);
+  resizeCanvas(1600, windowHeight);
 }
