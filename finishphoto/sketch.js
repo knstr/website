@@ -4,7 +4,10 @@ var x=1;
 function setup() {
   createCanvas(640, 480);
   let constraints = {
-    video: true,
+    video: {
+         facingMode: {
+          exact: "environment"
+        },
     audio: false
   };
   
