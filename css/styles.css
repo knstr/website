@@ -248,10 +248,11 @@ sup {
 
 a {
   color: var(--bs-link-color);
-  text-decoration: underline;
+  text-decoration: none;
 }
 a:hover {
   color: var(--bs-link-hover-color);
+  text-decoration: underline;
 }
 
 a:not([href]):not([class]), a:not([href]):not([class]):hover {
@@ -3636,6 +3637,7 @@ textarea.form-control-lg {
 }
 .nav-link:hover, .nav-link:focus {
   color: var(--bs-nav-link-hover-color);
+  text-decoration: none;
 }
 .nav-link.disabled {
   color: var(--bs-nav-link-disabled-color);
