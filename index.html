@@ -11,8 +11,9 @@
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
         <!-- Google fonts-->
-        <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet" type="text/css" />
-        <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet" type="text/css" />
+<!--         <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet" type="text/css" /> -->
+        <link href="css/fonts.css" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
     </head>
@@ -54,7 +55,6 @@
                         <a class="social-icon" href="https://github.com/knstr"><i class="fab fa-github"></i></a>
                         <a class="social-icon" href="https://twitter.com/KoenSiteur"><i class="fab fa-twitter"></i></a>
                         <a class="social-icon" href="https://scholar.google.nl/citations?user=Q9_Fj18AAAAJ"><i class="fas fa-graduation-cap"></i></a>
-                        <a class="social-icon" href="https://www.strava.com/athletes/1131014"><i class="fab fa-strava"></i></a>
                     </div>
                 </div>
             </section>
@@ -318,7 +318,14 @@
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
         <!-- goatcounter, for website statistics-->
-        <script data-goatcounter="https://knstr.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+        <script>
+          window.goatcounter = {
+              path: function(p) { return location.host + p }
+          }
+      </script>
+      <script data-goatcounter="https://knstr.goatcounter.com/count"
+              async src="//gc.zgo.at/count.js"></script>
+      
 
     </body>
 </html>

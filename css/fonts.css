@@ -1,0 +1,82 @@
+/* saira-extra-condensed-500 - latin_latin-ext_vietnamese */
+@font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Saira Extra Condensed';
+    font-style: normal;
+    font-weight: 500;
+    src: url('../fonts/saira-extra-condensed-v11-latin_latin-ext_vietnamese-500.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/saira-extra-condensed-v11-latin_latin-ext_vietnamese-500.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../fonts/saira-extra-condensed-v11-latin_latin-ext_vietnamese-500.woff2') format('woff2'), /* Super Modern Browsers */
+         url('../fonts/saira-extra-condensed-v11-latin_latin-ext_vietnamese-500.woff') format('woff'), /* Modern Browsers */
+         url('../fonts/saira-extra-condensed-v11-latin_latin-ext_vietnamese-500.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('../fonts/saira-extra-condensed-v11-latin_latin-ext_vietnamese-500.svg#SairaExtraCondensed') format('svg'); /* Legacy iOS */
+  }
+  /* saira-extra-condensed-700 - latin_latin-ext_vietnamese */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Saira Extra Condensed';
+    font-style: normal;
+    font-weight: 700;
+    src: url('../fonts/saira-extra-condensed-v11-latin_latin-ext_vietnamese-700.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/saira-extra-condensed-v11-latin_latin-ext_vietnamese-700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../fonts/saira-extra-condensed-v11-latin_latin-ext_vietnamese-700.woff2') format('woff2'), /* Super Modern Browsers */
+         url('../fonts/saira-extra-condensed-v11-latin_latin-ext_vietnamese-700.woff') format('woff'), /* Modern Browsers */
+         url('../fonts/saira-extra-condensed-v11-latin_latin-ext_vietnamese-700.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('../fonts/saira-extra-condensed-v11-latin_latin-ext_vietnamese-700.svg#SairaExtraCondensed') format('svg'); /* Legacy iOS */
+  }
+
+
+
+/* mulish-regular - latin_latin-ext_vietnamese */
+@font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Muli';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/mulish-v12-latin_latin-ext_vietnamese-regular.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/mulish-v12-latin_latin-ext_vietnamese-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../fonts/mulish-v12-latin_latin-ext_vietnamese-regular.woff2') format('woff2'), /* Super Modern Browsers */
+         url('../fonts/mulish-v12-latin_latin-ext_vietnamese-regular.woff') format('woff'), /* Modern Browsers */
+         url('../fonts/mulish-v12-latin_latin-ext_vietnamese-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('../fonts/mulish-v12-latin_latin-ext_vietnamese-regular.svg#Mulish') format('svg'); /* Legacy iOS */
+  }
+  /* mulish-italic - latin_latin-ext_vietnamese */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Muli';
+    font-style: italic;
+    font-weight: 400;
+    src: url('../fonts/mulish-v12-latin_latin-ext_vietnamese-italic.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/mulish-v12-latin_latin-ext_vietnamese-italic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../fonts/mulish-v12-latin_latin-ext_vietnamese-italic.woff2') format('woff2'), /* Super Modern Browsers */
+         url('../fonts/mulish-v12-latin_latin-ext_vietnamese-italic.woff') format('woff'), /* Modern Browsers */
+         url('../fonts/mulish-v12-latin_latin-ext_vietnamese-italic.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('../fonts/mulish-v12-latin_latin-ext_vietnamese-italic.svg#Mulish') format('svg'); /* Legacy iOS */
+  }
+  /* mulish-800 - latin_latin-ext_vietnamese */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Muli';
+    font-style: normal;
+    font-weight: 800;
+    src: url('../fonts/mulish-v12-latin_latin-ext_vietnamese-800.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/mulish-v12-latin_latin-ext_vietnamese-800.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../fonts/mulish-v12-latin_latin-ext_vietnamese-800.woff2') format('woff2'), /* Super Modern Browsers */
+         url('../fonts/mulish-v12-latin_latin-ext_vietnamese-800.woff') format('woff'), /* Modern Browsers */
+         url('../fonts/mulish-v12-latin_latin-ext_vietnamese-800.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('../fonts/mulish-v12-latin_latin-ext_vietnamese-800.svg#Mulish') format('svg'); /* Legacy iOS */
+  }
+  /* mulish-800italic - latin_latin-ext_vietnamese */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Muli';
+    font-style: italic;
+    font-weight: 800;
+    src: url('../fonts/mulish-v12-latin_latin-ext_vietnamese-800italic.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/mulish-v12-latin_latin-ext_vietnamese-800italic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../fonts/mulish-v12-latin_latin-ext_vietnamese-800italic.woff2') format('woff2'), /* Super Modern Browsers */
+         url('../fonts/mulish-v12-latin_latin-ext_vietnamese-800italic.woff') format('woff'), /* Modern Browsers */
+         url('../fonts/mulish-v12-latin_latin-ext_vietnamese-800italic.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('../fonts/mulish-v12-latin_latin-ext_vietnamese-800italic.svg#Mulish') format('svg'); /* Legacy iOS */
+  }
+  
